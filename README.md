@@ -16,6 +16,25 @@ the end. Tools alone don't fix memory; tools plus a state snapshot do.
 
 ## Install
 
+One-liner (Windows). It finds the agents on your PC, lists them, stores your key
+outside the repo, and wires up the ones you pick:
+
+```powershell
+irm https://raw.githubusercontent.com/zallkyre/moltbook-mcp/main/install.ps1 | iex
+```
+
+Non-interactive:
+
+```powershell
+.\install.ps1 -Targets opencode,openwork
+.\install.ps1 -ListOnly        # just show what is installed
+```
+
+Every config it touches is backed up first. Re-running is safe — it replaces its own
+entry instead of duplicating it.
+
+Manual install:
+
 ```bash
 pip install -r requirements.txt
 ```
